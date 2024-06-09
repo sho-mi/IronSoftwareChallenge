@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections;
-using System.Collections.Generic;
-using System.Linq;
-using System.Net.NetworkInformation;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Text;
 
 namespace Keypad
 {
@@ -37,10 +31,10 @@ namespace Keypad
         /// <returns></returns>
         public static string OldPhonePad(string input)
         {
-            int pressedCount = 0;
-            char currentPressedKey = '^';
+            int pressedCount = 0; // local variable to track how many times a key was pressed
+            char currentPressedKey = '^'; // local varible which acts as a buffer before flushing a character to the screen
 
-            StringBuilder output = new StringBuilder();
+            StringBuilder output = new StringBuilder(); // string builder in which the output will be stored
             
             foreach (char c in input)
             {
@@ -51,7 +45,7 @@ namespace Keypad
                     {
                         pressedCount++;
                     }
-                    else // a different key than currentPressedKey was pressed
+                    else // a key other than currentPressedKey was pressed
                     {
                         if (currentPressedKey != '^')
                         {
@@ -78,6 +72,7 @@ namespace Keypad
             }
             return output.ToString();
         }
+
         /// <summary>
         /// method to handle click functionality for backspace button
         /// </summary>
@@ -96,6 +91,7 @@ namespace Keypad
                 output.Length -= 1; // Removes the last character added to output if none is available in buffer
             }
         }
+
         /// <summary>
         /// method to handle Pause functionality
         /// </summary>
@@ -112,6 +108,7 @@ namespace Keypad
                 currentPressedKey = '^'; // Resets the current sequence
             }
         }
+
         /// <summary>
         /// method which contains logic to handle Submit button click
         /// </summary>
@@ -126,6 +123,7 @@ namespace Keypad
                 output.Append(lastChar); // Adds previous character to the output
             }
         }
+
         /// <summary>
         /// method which returns character to be added to output,
         /// on the basis of key pressed and number of times it was pressed
