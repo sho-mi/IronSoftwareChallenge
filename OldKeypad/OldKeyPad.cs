@@ -8,15 +8,15 @@ namespace Keypad
         private static readonly Dictionary<char, string> keys = new Dictionary<char, string>
         {
             { '0', " " },
-            { '1', "&,(" },
-            { '2', "ABC" },    
-            { '3', "DEF" },  
-            { '4', "GHI" },   
-            { '5', "JKL" },   
-            { '6', "MNO" },   
-            { '7', "PQRS" },   
-            { '8', "TUV" },   
-            { '9', "WXYZ" },
+            { '1', "&,(1" },
+            { '2', "ABC2" },    
+            { '3', "DEF3" },  
+            { '4', "GHI4" },   
+            { '5', "JKL5" },   
+            { '6', "MNO6" },   
+            { '7', "PQRS7" },   
+            { '8', "TUV8" },   
+            { '9', "WXYZ9" },
         };
 
         private const char ACTION_KEY_SUBMIT = '#'; // CODE FOR SUBMIT KEY
