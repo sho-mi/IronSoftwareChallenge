@@ -58,16 +58,16 @@ namespace Keypad
                 }
                 else if (c == ACTION_KEY_BACKSPACE)
                 {
-                    handleBackspaceClick(ref pressedCount, ref currentPressedKey, output);
+                    HandleBackspaceClick(ref pressedCount, ref currentPressedKey, output);
                 }
                 else if (c == ACTION_KEY_SUBMIT)
                 {
-                    handleSubmitClick(pressedCount, currentPressedKey, output);
+                    HandleSubmitClick(pressedCount, currentPressedKey, output);
                     break; // breaks out of loop on submit and returns the output
                 }
                 else if (c == PAUSE)
                 {
-                    handlePause(ref pressedCount, ref currentPressedKey, output);
+                    HandlePause(ref pressedCount, ref currentPressedKey, output);
                 }
             }
             return output.ToString();
@@ -79,7 +79,7 @@ namespace Keypad
         /// <param name="pressedCount" type="integer"></param>
         /// <param name="currentPressedKey" type="character"></param>
         /// <param name="output" type="StringBuilder"></param>
-        private static void handleBackspaceClick(ref int pressedCount, ref char currentPressedKey, StringBuilder output)
+        private static void HandleBackspaceClick(ref int pressedCount, ref char currentPressedKey, StringBuilder output)
         {
             if (currentPressedKey != '^')
             {
@@ -98,7 +98,7 @@ namespace Keypad
         /// <param name="pressedCount" type="integer"></param>
         /// <param name="currentPressedKey" type="character"></param>
         /// <param name="output" type="StringBuilder"></param>
-        private static void handlePause(ref int pressedCount, ref char currentPressedKey, StringBuilder output)
+        private static void HandlePause(ref int pressedCount, ref char currentPressedKey, StringBuilder output)
         {
             if (currentPressedKey != '^')
             {
@@ -115,7 +115,7 @@ namespace Keypad
         /// <param name="pressedCount" type="integer"></param>
         /// <param name="currentPressedKey" type="character"></param>
         /// <param name="output" type="StringBuilder"></param>
-        private static void handleSubmitClick(int pressedCount, char currentPressedKey, StringBuilder output)
+        private static void HandleSubmitClick(int pressedCount, char currentPressedKey, StringBuilder output)
         {
             if (currentPressedKey != '^')
             {
